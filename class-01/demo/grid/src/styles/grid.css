@@ -1,0 +1,7 @@
+.grid {
+  border: 1px solid red;
+  display:flex;
+  flex-direction:column;
+  padding: 1em;
+  row-gap: 2em;
+}
