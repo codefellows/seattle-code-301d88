@@ -97,9 +97,9 @@ Today's class will focus on passing information as `props` from a parent compone
 
 1. Go to the [Getting Started](https://react-bootstrap.github.io/getting-started/introduction) page
 1. Install react bootstrap by navigating in your terminal to the folder with your react app and installing
-    npm install react-bootstrap bootstrap
+   `npm install react-bootstrap bootstrap`
 1. Then, open your index.js file and `import` the bootstrap CSS as noted
-    import 'bootstrap/dist/css/bootstrap.min.css';
+   `import 'bootstrap/dist/css/bootstrap.min.css';`
 1. When working on your application, rather than use boring ugly html markup in your JSX, choose a well designed and styled [Bootstrap Component](https://react-bootstrap.github.io/components/alerts/) instead!
    - Note that every component has a good visual and sample code included in their documentation
 
