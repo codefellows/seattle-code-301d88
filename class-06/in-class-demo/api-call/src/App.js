@@ -13,6 +13,8 @@ class App extends React.Component {
     }
   }
 
+  // *** CITY DATA DEMO HANDLERS ***
+
   handleInput = (e) => {
     e.preventDefault();
     this.setState({
@@ -23,33 +25,36 @@ class App extends React.Component {
   getCityData = async (e) => {
     e.preventDefault();
 
+    // build out the URL with the query parameters needed to get data back from LocationIQ
     let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`
 
     let cityData = await axios.get(url);
 
     console.log(cityData.data[0]);
 
-
+    // FOR YOUR LAB YOU WILL NEED TO GET A MAP IMAGE SRC. Example:
+    // `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=47.6038321,-122.3300624&zoom=10`
   }
 
   handleGetPokemon = async (e) => {
    e.preventDefault();
-    // first axios call - url
     try {
+      // make a request to the Pokemon API and get data using Axios
       let pokemonData = await axios.get('https://pokeapi.co/api/v2/pokemon');
-  
+
       // proof of life
       // console.log(pokemonData.data.results);
+      // save the data into state
       this.setState({
-        pokemonData: pokemonData.data.results
-      })
-
+        pokemonData: pokemonData.data.results,
+        error: false
+      });
     } catch(error){
       console.log(error)
       this.setState({
         error: true,
-        errorMessage: error.message
-      })
+        errorMessage: `An Error Occured: ${error.message}`
+      });
     }
   }
 
@@ -66,13 +71,7 @@ class App extends React.Component {
         <form>
           <button onClick={this.handleGetPokemon}>Gotta Catch them all!</button>
         </form>
-
-        <form onSubmit={this.getCityData}>
-          <label> Pick a city!
-            <input type="text" onInput={this.handleInput} />
-          </label>
-          <button type='submit'>Explore!</button>
-        </form>
+        {/* TERNARY: WTF to handle errors */}
       {
         this.state.error
         ?
@@ -82,6 +81,14 @@ class App extends React.Component {
           {pokemonItems}
         </ul>
       }
+
+      {/* FORM TO HANDLE CITY DATA */}
+        <form onSubmit={this.getCityData}>
+          <label> Pick a city!
+            <input type="text" onInput={this.handleInput} />
+          </label>
+          <button type='submit'>Explore!</button>
+        </form>
       </>
     );
   }
