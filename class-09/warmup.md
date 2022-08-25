@@ -1,7 +1,8 @@
 # Warm-Up Exercise
+
 This code sample is written in Python. Read through the code and determine the output for this function.
 
-```
+```python
 def search(source: list, key: int) -> int:
     start = 0
     end = len(source) - 1
