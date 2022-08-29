@@ -25,6 +25,7 @@ class App extends React.Component {
     }
   }
 
+  // React Lifecycle function that will run this block of code as soon as the component is rendered to the DOM tree... net effect: it will call this.getCats() right on site load.
   componentDidMount() {
     this.getCats();
   }
