@@ -1,0 +1,6 @@
+.row {
+  border: 1px solid greenyellow;
+  display:flex;
+  column-gap: 2em;
+  padding: 1em;
+}

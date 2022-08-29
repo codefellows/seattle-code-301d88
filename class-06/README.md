@@ -1,5 +1,13 @@
 # Asynchronous Code and Third Party APIs
 
+## IN-CLASS NOTES AND TAKEAWAYS
+
+- [Class 06 API Call Demo](in-class-demo/api-call/)
+- [VALUE vs REFERENCE REPLIT](https://replit.com/@arpatterson31/Class-301d88-Value-vs-Reference#index.js)
+- [Module 2 WRRC Whiteboard](whiteboards/module2-wrrc.png)
+- [REST Verbs Whiteboard](whiteboards/rest-verbs.png)
+- [URL Anatomy](whiteboards/url-anatomy.png)
+
 ## Overview
 
 Today we will explore third party APIs and how to request data from them.
